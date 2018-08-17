@@ -17,7 +17,7 @@ images = [ image for image in os.listdir( image_dir ) if re.match( image_ptrn, i
 if not len( images ):
     sys.exit( 'Error: Could not find images')
 
-logf = open('log.dat', 'w')
+logf = open('/var/tmp/log.dat', 'w')
 
 pos = 0
 
@@ -30,8 +30,8 @@ def index():
     global positive
     global negative
     
-    positive = open('info.dat', 'a')
-    negative = open('bg.txt', 'a')
+    positive = open('/var/tmp/info.dat', 'a')
+    negative = open('/var/tmp/bg.txt', 'a')
 
     #最初の画像
     imgsrc = os.path.join( image_dir, images[pos] )
